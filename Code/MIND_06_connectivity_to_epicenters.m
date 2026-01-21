@@ -6,18 +6,18 @@
 
 % This file is part of Neurobiology MIND Psychosis toolkit.
 %
-% Neurobiology MIND Mapping toolkit is free software: 
+% Neurobiology MIND Psychosis toolkit is free software: 
 % you can redistribute it and/or modify it under the terms of the 
 % GNU General Public License as published by the Free Software Foundation, 
 % either version 3 of the License, or (at your option) any later version.
 %
-% Neurobiology MIND Mapping toolkit is distributed in the hope that 
+% Neurobiology MIND Psychosis toolkit is distributed in the hope that 
 % it will be useful, but WITHOUT ANY WARRANTY; without even the implied 
 % warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 % GNU General Public License for more details.
 %
 % You should have received a copy of the GNU General Public License
-% along with Neurobiology MIND Mapping toolkit. If not, see 
+% along with Neurobiology MIND Psychosis toolkit. If not, see 
 % <https://www.gnu.org/licenses/>.
 
 clear
@@ -182,4 +182,5 @@ p_epicenters_centiles_MIND_FEP_FEP_high_SANS = 2 * (1 - tcdf(abs(epicenters_cent
 p_epicenters_centiles_MIND_FEP_FEP_high_SANS = mafdr(p_epicenters_centiles_MIND_FEP_FEP_high_SANS,'BHFDR','true');
 epicenters_centiles_MIND_FEP_FEP_high_SANS_significant = epicenters_centiles_MIND_FEP_FEP_high_SANS;
 epicenters_centiles_MIND_FEP_FEP_high_SANS_significant(p_epicenters_centiles_MIND_FEP_FEP_high_SANS>0.05) = nan;
+
 writetable(array2table(epicenters_centiles_MIND_FEP_FEP_high_SANS_significant,"VariableNames",degree_FEP_68.Properties.VariableNames),'significant_epicenters_centiles_MIND_FEP_FEP_high_SANS.csv')
